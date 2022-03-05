@@ -4,8 +4,6 @@ import "./App.css";
 import LoginComponent from "./LoginComponent/LoginComponent";
 import SignupComponent from "./SignupComponent/SignupComponent";
 import Dashboard from "./Dashboard.js/Dashboard";
-import Register from "./actions/useractions";
-
 function App(props) {
   return (
     <BrowserRouter>
@@ -26,7 +24,7 @@ function App(props) {
             <Link to="/register">
               Sign up
               <i
-                className="fa fa-shopping-cart fa-2x mx-2 btn "
+                className="fa fa fa-user p-3 fa-6x mx-2 btn "
                 style={{ color: "white" }}
               ></i>
             </Link>
@@ -41,8 +39,6 @@ function App(props) {
         </header>
         <main className="main">
           <div className="content">
-           
-            <Register />
             <Routes>
               <Route path="/signin" element={<LoginComponent />} />
               <Route path="/register" element={<SignupComponent />} />

@@ -5,28 +5,28 @@ import Register from "../actions/useractions";
 
 const SignupComponent = () => {
   const initialValues = { username: "", email: "", password: "" };
-  const [formValues, setFormValues] = useState(initialValues);
-  const [formErrors, setFormErrors] = useState({});
+  const [formData, setformData] = useState(initialValues);
+  const [errorMesg, seterrorMesg] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
+    setformData({ ...formData, [name]: value });
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    setFormErrors(validate(formValues));
-    
+    seterrorMesg(validateForm(formData));
+
     setIsSubmit(true);
   };
   useEffect(() => {
-    console.log(formErrors);
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
+    console.log(errorMesg);
+    if (Object.keys(errorMesg).length === 0 && isSubmit) {
       navigate("/home");
-      <Register name={formValues.username}/>
+      <Register name={formData.username} />;
     }
-  }, [formErrors]);
-  const validate = (values) => {
+  }, [errorMesg]);
+  const validateForm = (values) => {
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!values.username) {
@@ -60,10 +60,10 @@ const SignupComponent = () => {
               type="name"
               name="username"
               id="name"
-              value={formValues.username}
+              value={formData.username}
               onChange={handleChange}
             ></input>
-            <p className="error">{formErrors.username}</p>
+            <p className="error">{errorMesg.username}</p>
           </li>
           <li>
             <label htmlFor="email">Email</label>
@@ -71,10 +71,10 @@ const SignupComponent = () => {
               type="email"
               name="email"
               id="email"
-              value={formValues.email}
+              value={formData.email}
               onChange={handleChange}
             ></input>
-            <p className="error">{formErrors.email}</p>
+            <p className="error">{errorMesg.email}</p>
           </li>
           <li>
             <label htmlFor="password">Password</label>
@@ -82,10 +82,10 @@ const SignupComponent = () => {
               type="password"
               id="password"
               name="password"
-              value={formValues.password}
+              value={formData.password}
               onChange={handleChange}
             ></input>
-            <p className="error">{formErrors.password}</p>
+            <p className="error">{errorMesg.password}</p>
           </li>
           <li>
             <button type="submit" className="primary">

@@ -39,7 +39,7 @@ const LoginComponent = () => {
             ></input>
           </li>
           <li>
-            <button type="submit" className="button primary" >
+            <button type="submit" className="button primary">
               Signin
             </button>
           </li>

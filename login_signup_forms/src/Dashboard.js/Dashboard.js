@@ -8,10 +8,6 @@ const Dashboard = (props)=>{
             <div className='welcome'>
             <h2>Welcome to VISIONIAS</h2>
             </div>
-        {/* <div className='dash'>
-            <h2>Welcome to Home Screen</h2>
-            <img className='img' src='https://d19k0hz679a7ts.cloudfront.net/banner/achievement_2019_1.png' alt='toppers list' />
-        </div> */}
         <div className="Carousel-area">
         <Carousel showArrows autoPlay showThumbs={false}>
           <div>
