@@ -1,0 +1,117 @@
+html{
+  font-size: 62.5%; 
+  box-sizing: border-box;
+}
+body{
+  font: 1.6rem Helvetica;
+  height: 100vh;
+  margin: 0;
+  color: #465166;
+}
+.full-width {
+  width: 100%;
+}
+#root{
+  height: 100%;
+}
+.grid-container{
+  display: grid;
+  grid-template-areas: 
+  "header"
+  "main"
+  "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+}
+.header{
+  grid-area: header;
+  background-color: #203040;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+.side-bar button {
+  font-size: 3rem;
+  padding: .5rem;
+  background: none;
+  border: none;
+  color:#ffffff;
+  cursor: pointer;
+}
+.app-logo img{
+  width: 200px;
+  object-fit: contain;
+}
+.navigation-links a{
+  color:#ffffff;
+  text-decoration: none;
+  padding: 1rem;
+}
+.footer{
+  grid-area: footer;
+  background-color: #203040;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main{
+  grid-area: main;
+  color: #465166;
+  }
+  .content-margined{
+    margin: 1rem;
+  }
+  .row.center {
+    justify-content: center;
+  }
+  .form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 100px;
+  }
+  .form-container{
+    display: flex;
+    flex-direction: column;
+    width:35rem;
+    padding: 2rem;
+    border: .1rem #c0c0c0 solid;
+    border-radius: .5rem;
+    list-style-type: none;
+  }
+  .form-container li{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  input{
+    padding: 1rem;
+    border: .1rem #c0c0c0 solid;
+    border-radius: .5rem;
+  }
+  button.primary {
+    background-color: #f0c040;
+  }
+  button {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 0.1rem #a4a4a4 solid;
+    font-size: 1.6rem;
+    font-family: Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  button {
+    background-color: #f8f8f8;
+    cursor: pointer;
+  }
+  .form label {
+    margin: 1rem 0;
+  }
+  
